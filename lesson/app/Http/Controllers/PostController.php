@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Models\Post;
 class PostController extends Controller
@@ -129,9 +130,11 @@ class PostController extends Controller
 
     public function deleteFile(Request $request, $id){
         $ad_key = $request -> input('ad_key');
+
         $delete = Post::find($id);
+        $file = $delete -> file;
         if ($delete -> ad_key == $ad_key){
-            $delete -> file = '';
+            File::delete('app/files/'.$file);
             return response() -> json(['massage'=> 'Файл удален']);
         }else{return response() -> json(['massage'=> 'Ключ не прошел валидацию']);}
 
@@ -143,7 +146,8 @@ class PostController extends Controller
 
         $file = $delete -> file;
         if($delete -> ad_key == $ad_key){
-            // $file -> unlink(storage_path('app/files'.$file-> getClientOriginalName . '.' . $file->getClientOriginalExtension()));
+
+            File::delete('app/files/'.$file);
             $delete->delete();
             return response()->json(['massage' => 'Объявление было успешно удалено']);
         }else{return response()->json(['massage' => $file,'ad_key не подходит']);}
