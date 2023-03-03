@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "3e95c411-2ddd-47bf-af32-eecd285890b9",
+		"name": "lesson1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Добавить объявление",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title_ad",
+							"value": "TITLE"
+						},
+						{
+							"key": "info_ad",
+							"value": "INFO"
+						},
+						{
+							"key": "contact_name",
+							"value": "NAME"
+						},
+						{
+							"key": "contact_phone",
+							"value": "88888888888"
+						},
+						{
+							"key": "date_end",
+							"value": "27.03.2004"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Игорь/Pictures/Roblox/RobloxScreenShot20230104_133114879.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/ad/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ad",
+						"add"
+					],
+					"query": [
+						{
+							"key": "title_ad",
+							"value": "TITLE",
+							"disabled": true
+						},
+						{
+							"key": "info_ad",
+							"value": "INFO",
+							"disabled": true
+						},
+						{
+							"key": "contact_name",
+							"value": "NAME",
+							"disabled": true
+						},
+						{
+							"key": "contact_phone",
+							"value": "893233",
+							"disabled": true
+						},
+						{
+							"key": "date_end",
+							"value": "27.03.2004",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"value": "fdsf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Посмотреть все активные объявления",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/ads",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Посмотреть выбранное объявление",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/ad/18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ad",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка уникального ключа у объявления",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ad_key",
+							"value": "3174",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/ad/1/proverka",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ad",
+						"1",
+						"proverka"
+					],
+					"query": [
+						{
+							"key": "ad_key",
+							"value": "3174",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменить объявление",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ad_key",
+							"value": "6458",
+							"type": "default"
+						},
+						{
+							"key": "title_ad",
+							"value": "ПРИВЕТ"
+						},
+						{
+							"key": "info_ad",
+							"value": "INFO"
+						},
+						{
+							"key": "contact_name",
+							"value": "NAME"
+						},
+						{
+							"key": "contact_phone",
+							"value": "89323358553"
+						},
+						{
+							"key": "date_end",
+							"value": "27.03.2004"
+						},
+						{
+							"key": "file",
+							"value": "fdsf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/ad/1/edit/data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ad",
+						"1",
+						"edit",
+						"data"
+					],
+					"query": [
+						{
+							"key": "title_ad",
+							"value": "TITLE",
+							"disabled": true
+						},
+						{
+							"key": "info_ad",
+							"value": "INFO",
+							"disabled": true
+						},
+						{
+							"key": "contact_name",
+							"value": "NAME",
+							"disabled": true
+						},
+						{
+							"key": "contact_phone",
+							"value": "893233",
+							"disabled": true
+						},
+						{
+							"key": "date_end",
+							"value": "27.03.2004",
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"value": "fdsf",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактировать дату окончания объявления",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ad_key",
+							"value": "6458",
+							"type": "default"
+						},
+						{
+							"key": "date_end",
+							"value": "27.03.2020",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/ad/1/edit/date",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ad",
+						"1",
+						"edit",
+						"date"
+					],
+					"query": [
+						{
+							"key": "ad_key",
+							"value": "3174",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить объявление",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ad_key",
+							"value": "7763",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/ad/20/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ad",
+						"20",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "ad_key",
+							"value": "3174",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить файл из объявления",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ad_key",
+							"value": "8905",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/ad/18/edit/file/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ad",
+						"18",
+						"edit",
+						"file",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "ad_key",
+							"value": "3174",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
